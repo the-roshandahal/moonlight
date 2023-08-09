@@ -2,7 +2,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as django_logout
 from django.shortcuts import render, redirect
 from .models import *
-import requests
 # Create your views here.
 
 def home(request):
