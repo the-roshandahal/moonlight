@@ -1,0 +1,277 @@
+{% load static %}{% include "header.html" %}
+<!-- Start Main Slider -->
+<section class="main-slider style1">
+    <div class="slider-box">
+        <!-- Banner Carousel -->
+        <div class="banner-carousel owl-theme owl-carousel">
+            <!-- slide -->
+            {% for slide in slides %}
+            <div class="slide">
+                <div class="image-layer" style="background-image:url({{slide.image.url}})"></div>
+                <div class="auto-container">
+                    <div class="content">
+                        <h3>{{slide.heading_text}}</h3>
+                        <h2>{{slide.sub_heading_text}}</h2>
+                        {% if slide.button_url and slide.button_text %}
+                        <div class="btns-box">
+                            <a class="btn-one" href="{{slide.button_url}}"><span class="txt">{{slide.button_text}}</span></a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<!-- End Main Slider -->
+
+<section class="choose-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="visa-assessment-box">
+                    <div class="img-holder">
+                        <img src="{{home.header_image.url}}" alt="Awesome Image">
+                    </div>
+                    <div class="text-holder">
+                        <div class="sec-title">
+                            <h3>{{home.header_heading}}</h3>
+                            <!-- <h2><span>We provide best career counselling in nepal.</span></h2> -->
+                        </div>
+                        <div class="inner-content">
+                            <p>{{home.header_text}}</p>
+                            <div class="btns-box">
+                                <a class="btn-one style2" href="{{home.header_button_url}}"><span class="txt">{{home.header_button_text}}<i class="fa fa-angle-double-right" aria-hidden="true"></i></span></a>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
+
+
+
+
+<!--Start Coaching Area-->
+<section class="coaching-area">
+    <div class="layer-outer" style="background-image: url(assets/images/shape/shape-1.png)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="coaching-content-box">
+                    <div class="sec-title">
+                        <h3>Sectors We Recruit In</h3>
+                        <h2>{{home.service_title}}</h2>
+                    </div>
+                    <div class="inner-content">
+                        <p>{{home.service_text}}</p>
+                    </div> 
+                </div>    
+            </div>
+            <div class="col-xl-6">
+                <div class="coaching-items-box">
+                    <div class="row">
+                        <!--Start Single Coaching Item-->
+                        <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="0ms">
+                            <div class="single-coaching-item text-center">
+                                <div class="icon"><span class="flaticon-interface"></span></div>
+                                <h3>AGRO</h3>
+                            </div>
+                        </div>
+                        <!--End Single Coaching Item-->
+                        <!--Start Single Coaching Item-->
+                        <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div class="single-coaching-item text-center">
+                                <div class="icon"><span class="flaticon-avatar"></span></div>
+                                <h3>Coaching</h3>
+                            </div>
+                        </div>
+                        <!--End Single Coaching Item-->
+                    </div>
+                </div>    
+            </div>
+        </div>
+        
+        <div class="row">
+            <!--Start Single Coaching Item-->
+            <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="0ms">
+                <div class="single-coaching-item text-center">
+                    <div class="icon"><span class="flaticon-business"></span></div>
+                    <h3>Washroom</h3>
+                </div>
+            </div>
+            <!--End Single Coaching Item-->  
+            <!--Start Single Coaching Item-->
+            <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
+                <div class="single-coaching-item text-center">
+                    <div class="icon"><span class="flaticon-people"></span></div>
+                    <h3>Factory</h3>
+                </div>
+            </div>
+            <!--End Single Coaching Item-->    
+            <!--Start Single Coaching Item-->
+            <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="400ms">
+                <div class="single-coaching-item text-center">
+                    <div class="icon"><span class="flaticon-education"></span></div>
+                    <h3>Hospitality</h3>
+                </div>
+            </div>
+            <!--End Single Coaching Item-->    
+            <!--Start Single Coaching Item-->
+            <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="600ms">
+                <div class="single-coaching-item text-center">
+                    <div class="icon"><span class="flaticon-education-1"></span></div>
+                    <h3>Others</h3>
+                </div>
+            </div>
+            <!--End Single Coaching Item-->      
+        </div>
+        
+    </div>
+</section>
+<!--End Coaching Area-->
+
+
+
+
+<!--Start Choose Area-->
+<section class="choose-area">
+    <div class="layer-outer" style="background-image: url({% static 'assets/images/shape/shape-1.png' %})"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="choose-left-box">
+                    <div class="border-box paroller"></div>
+                    <div class="border-box2 paroller"></div>
+                    <div class="video-holder-box" style="background-image: url({{home.bottom_image.url}})"></div>
+                </div>    
+            </div>
+            <div class="col-xl-6">
+                <div class="choose-content-box">
+                    <div class="sec-title">
+                        <h2><br><span>{{home.bottom_title}}</span></h2>
+                    </div>
+                    <div class="inner-content">
+                        <h3>{{home.bottom_sub_title}}</h3>
+                        <p>{{home.bottom_text}}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!--End Choose Area-->
+
+
+
+<section class="fact-counter-area" style="background-image:url(assets/images/parallax-background/fact-counter-bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <!--Start Single Fact Counter-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-fact-counter wow fadeInRight animated" data-wow-delay="100ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                    <div class="icon-box">
+                        <span class="flaticon-architecture-and-city"></span>
+                    </div>
+                    <div class="count-box counted">
+                        <h2>
+                            <span class="timer" data-from="1" data-to="{{home.years_of_experience}}" data-speed="5000" data-refresh-interval="50">{{home.years_of_experience}}</span>
+                            <span class="flaticon-plus"></span>
+                        </h2>
+                        <h5>Years of Experience</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Fact Counter-->
+            <!--Start Single Fact Counter-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-fact-counter wow fadeInRight animated" data-wow-delay="100ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                    <div class="icon-box">
+                        <span class="flaticon-education-2"></span>
+                    </div>
+                    <div class="count-box counted">
+                        <h2>
+                            <span class="timer" data-from="1" data-to="{{home.countries}}" data-speed="5000" data-refresh-interval="50">{{home.countries}}</span>
+                            <span class="flaticon-plus"></span>
+                        </h2>
+                        <h5>Countries Served</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Fact Counter-->
+            <!--Start Single Fact Counter-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-fact-counter wow fadeInRight animated" data-wow-delay="100ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                    <div class="icon-box">
+                        <span class="flaticon-architecture-and-city"></span>
+                    </div>
+                    <div class="count-box counted">
+                        <h2>
+                            <span class="timer" data-from="1" data-to="{{home.employees}}" data-speed="5000" data-refresh-interval="50">{{home.employees}}</span>
+                            <span class="flaticon-plus"></span>
+                        </h2>
+                        <h5>Employees Deployed</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Fact Counter-->
+            <!--Start Single Fact Counter-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-fact-counter wow fadeInRight animated" data-wow-delay="100ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                    <div class="icon-box">
+                        <span class="flaticon-people-2"></span>
+                    </div>
+                    <div class="count-box counted">
+                        <h2>
+                            <span class="timer" data-from="1" data-to="{{home.clients}}" data-speed="5000" data-refresh-interval="50">{{home.clients}}</span>
+                            <span class="flaticon-plus"></span>
+                        </h2>
+                        <h5>Clients</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Fact Counter-->
+        </div>
+    </div>
+</section>
+
+
+
+<!--Start Blog Style1 Area-->
+<section class="blog-style1-area">
+    <div class="container">
+        <div class="sec-title text-center">
+            <h3>OUR NEWS</h3>
+            <h2>Articles From Resources<br> <span>And Latest News.</span></h2>
+        </div>
+        <div class="row">
+            <!--Start Single blog Style1-->
+            {% for blog in blogs %}
+            <div class="col-xl-4 col-lg-4">
+                <div class="single-blog-style1 wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                    <div class="img-holder">
+                        <div class="inner">
+                            <img src="{{blog.image.url}}" alt="Awesome Image">
+                        </div>
+                    </div> 
+                    <div class="text-holder">
+                        <ul class="meta-info">
+                            <li><span class="flaticon-user thm-clr"></span><a href="#">By admin</a></li>
+                            <li><span class="flaticon-open-archive thm-clr"></span><a href="#">{{blog.created}}</a></li>
+                        </ul>
+                        <h3><a href="{% url 'home' %}">{{blog.title}}</a></h3>
+                    </div>   
+                </div>
+            </div>
+            {% endfor %}
+            <!--End Single blog Style1-->
+        </div>
+    </div>
+</section>
+<!--End Blog Style1 Area-->
+{% include "footer.html" %}
