@@ -15,7 +15,7 @@
                     <!--Start Header Left-->
                     <div class="header-left clearfix pull-left">
                         <div class="logo">
-                            <a href="index.html"><img src="{{data.color_logo.url}}" alt="Awesome Logo" title=""></a>
+                            <a href="{% url 'home' %}"><img src="{{data.color_logo.url}}" alt="Awesome Logo" title=""></a>
                         </div>
                     </div>
                     <!--End Header Left-->
@@ -112,7 +112,7 @@
                                         <li><a href="{% url 'home' %}">About Us</a></li>
                                         <li><a href="{% url 'home' %}">Our Services</a></li>
                                         <li><a href="{% url 'home' %}">Demands</a></li>
-                                        <li><a href="{% url 'home' %}">Contact Us</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </nav>                        
@@ -142,7 +142,7 @@
                 <div class="clearfix">
                     <!--Logo-->
                     <div class="logo float-left">
-                        <a href="index.html" class="img-responsive"><img src="{{data.white_logo.url}}" alt="" title="" ></a>
+                        <a href="{% url 'home' %}" class="img-responsive"><img src="{{data.white_logo.url}}" alt="" title="" ></a>
                     </div>
                     <!--Right Col-->
                     <div class="right-col float-right">
@@ -162,7 +162,7 @@
             <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
     
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/resources/logo.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="{% url 'home' %}"><img src="assets/images/resources/logo.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <!--Social Links-->
                 <div class="social-links">
