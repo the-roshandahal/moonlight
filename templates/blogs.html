@@ -1,0 +1,64 @@
+{% load static %}
+{% include "header.html" %}
+<!--Start Blog Area-->
+<section class="blog-area">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <!--Start Single blog Style1-->
+                    {% for blog in blogs_page %}                      
+                    <div class="col-6">
+                        <div class="blog-post">
+                            <div class="single-blog-style1 style1instyle3 wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                <div class="img-holder">
+                                    <div class="inner">
+                                        <img src="{{ blog.image.url }}" alt="Blog Image" >
+                                    </div>
+                                    
+                                </div> 
+                                <div class="text-holder">
+                                    <ul class="meta-info">
+                                        <li><span class="flaticon-user thm-clr"></span><a href="#">By admin</a></li>
+                                        <li><span class="flaticon-open-archive thm-clr"></span><a href="#">{{blog.created}}</a></li>
+                                    </ul>
+                                    <h3><a href="{% url 'blog_details' slug=blog.slug %}">{{blog.title}}</a></h3>
+                                    <!-- <div class="text"> 
+                                        <p>{{blog.blog | safe }}</p>
+                                    </div> -->
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single blog Style1-->
+                    {% endfor %}
+
+                    
+                </div>
+                
+                <div class="row">
+                    <div class="col-xl-12">
+                        <ul class="styled-pagination text-center clearfix">
+                            {% if blogs_page.has_previous %}
+                                <li class="prev"><a href="?page=1"><span class="fa fa-angle-left"></span></a></li>
+                            {% endif %}
+                            {% for num in blogs_page.paginator.page_range %}
+                                {% if blogs_page.number == num %}
+                                    <li><a href="#" class="active">{{ num }}</a></li>
+                                {% else %}
+                                    <li><a href="?page={{ num }}">{{ num }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if blogs_page.has_next %}
+                                <li class="next"><a href="?page={{ blogs_page.paginator.num_pages }}"><span class="fa fa-angle-right"></span></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End Blog Area-->
+{% include "footer.html" %}

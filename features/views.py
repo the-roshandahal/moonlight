@@ -1,5 +1,4 @@
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout as django_logout
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from .models import *
 # Create your views here.
@@ -29,3 +28,22 @@ def contact(request):
         return redirect('contact')
     else:
         return render(request,'contact.html')
+    
+
+
+def blogs(request):
+    blogs = Blog.objects.all()
+    paginator = Paginator(blogs, 5)
+    page_number = request.GET.get('page')
+    blogs_page = paginator.get_page(page_number)
+    context = {
+        'blogs_page': blogs_page
+    }
+    return render(request, 'blogs.html', context)
+
+def blog_details(request,slug):
+    blog = Blog.objects.get(slug=slug)
+    context = {
+        'blog': blog
+    }
+    return render(request, 'blog_details.html', context)

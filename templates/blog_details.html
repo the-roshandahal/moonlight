@@ -1,0 +1,32 @@
+{% include "header.html" %}
+
+<!--Start Blog single Area-->
+<section class="blog-area blog-single-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="blog-post">
+                    <div class="single-blog-style1 style1instyle3">
+                        <div class="img-holder">
+                            <div class="inner" style="text-align: center;">
+                                <img src="{{ blog.image.url }}" alt="Blog Image" style="max-height: 500px; margin: 0 auto;">
+                            </div>
+                        </div> 
+                        <div class="text-holder">
+                            <ul class="meta-info">
+                                <li><span class="flaticon-user thm-clr"></span><a href="#">By admin</a></li>
+                                <li><span class="flaticon-open-archive thm-clr"></span><a href="#">{{blog.created}}</a></li>
+                            </ul>
+                            <h3>{{blog.title}}</h3>
+                            <div class="text">
+                                <p>{{blog.blog|safe}}</p>
+                            </div>
+                        </div> 
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
+<!--End Blog single Area-->
+{% include "footer.html" %}
