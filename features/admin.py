@@ -11,6 +11,7 @@ admin.site.unregister(User)
 admin.site.register(CompanySetup)
 admin.site.register(Slider)
 admin.site.register(HomeContent)
+admin.site.register(ServiceInquiry)
 
 
 
@@ -18,3 +19,9 @@ class BlogAdmin(SummernoteModelAdmin):
     list_display = ('title', 'created')
     summernote_fields = ('blog',) 
 admin.site.register(Blog,BlogAdmin)
+
+
+class ServiceAdmin(SummernoteModelAdmin):
+    list_display = ('service_title', 'created')
+    summernote_fields = ('service_description',) 
+admin.site.register(Service,ServiceAdmin)

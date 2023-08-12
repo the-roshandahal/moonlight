@@ -11,6 +11,8 @@ urlpatterns = [
     path("contact", views.contact, name="contact"),
     path("blogs", views.blogs, name="blogs"),
     path("blog_details/<str:slug>", views.blog_details, name="blog_details"),
+    path("services", views.services, name="services"),
+    path("service_details/<str:slug>", views.service_details, name="service_details"),
     
 
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),

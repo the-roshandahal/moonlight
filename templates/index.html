@@ -56,86 +56,61 @@
 
 
 
-<!--Start Coaching Area-->
-<section class="coaching-area">
-    <div class="layer-outer" style="background-image: url(assets/images/shape/shape-1.png)"></div>
+
+
+
+
+
+
+
+
+
+<section class="select-country-style3-area">
+    <div class="layer-outer" style="background-image: url(assets/images/pattern/select-country-style2-bg.jpg)"></div>
     <div class="container">
         <div class="row">
-            <div class="col-xl-6">
-                <div class="coaching-content-box">
+            <div class="col-xl-12">
+                <div class="top">
                     <div class="sec-title">
                         <h3>Sectors We Recruit In</h3>
                         <h2>{{home.service_title}}</h2>
                     </div>
-                    <div class="inner-content">
+                    <div class="text">
                         <p>{{home.service_text}}</p>
-                    </div> 
-                </div>    
-            </div>
-            <div class="col-xl-6">
-                <div class="coaching-items-box">
-                    <div class="row">
-                        <!--Start Single Coaching Item-->
-                        <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="0ms">
-                            <div class="single-coaching-item text-center">
-                                <div class="icon"><span class="flaticon-interface"></span></div>
-                                <h3>AGRO</h3>
-                            </div>
-                        </div>
-                        <!--End Single Coaching Item-->
-                        <!--Start Single Coaching Item-->
-                        <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="300ms">
-                            <div class="single-coaching-item text-center">
-                                <div class="icon"><span class="flaticon-avatar"></span></div>
-                                <h3>Coaching</h3>
-                            </div>
-                        </div>
-                        <!--End Single Coaching Item-->
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!--Start Single select Country style3-->
+            {% for service in services %}
+            <div class="col-xl-4 col-lg-4">
+                <div class="single-select-country-style3">
+                    <div class="img-holder">
+                        <div class="inner">
+                            <img src="{{service.service_image.url}}" alt="Awesome Image">
+                        </div>
+                    </div>
+                    <div class="text-holder">
+                        <div class="icon"><span class="flaticon-technology"></span></div>
+                        <h3>{{service.service_title}}</h3>
+                        <p>{{service.service_description|safe | truncatechars:30}}</p>
+                    </div>    
                 </div>    
             </div>
+            {% endfor %}
+            <!--End Single select Country style3-->
+            
         </div>
-        
         <div class="row">
-            <!--Start Single Coaching Item-->
-            <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="0ms">
-                <div class="single-coaching-item text-center">
-                    <div class="icon"><span class="flaticon-business"></span></div>
-                    <h3>Washroom</h3>
+            <div class="col-xl-12">
+                <div class="view-all-country-button-style2 text-center">
+                    <p>Challenges are just opportunities in disguise. <a href="{% url 'services' %}">View all Services!</a></p>
                 </div>
             </div>
-            <!--End Single Coaching Item-->  
-            <!--Start Single Coaching Item-->
-            <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
-                <div class="single-coaching-item text-center">
-                    <div class="icon"><span class="flaticon-people"></span></div>
-                    <h3>Factory</h3>
-                </div>
-            </div>
-            <!--End Single Coaching Item-->    
-            <!--Start Single Coaching Item-->
-            <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="400ms">
-                <div class="single-coaching-item text-center">
-                    <div class="icon"><span class="flaticon-education"></span></div>
-                    <h3>Hospitality</h3>
-                </div>
-            </div>
-            <!--End Single Coaching Item-->    
-            <!--Start Single Coaching Item-->
-            <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="600ms">
-                <div class="single-coaching-item text-center">
-                    <div class="icon"><span class="flaticon-education-1"></span></div>
-                    <h3>Others</h3>
-                </div>
-            </div>
-            <!--End Single Coaching Item-->      
         </div>
-        
-    </div>
+    </div>    
 </section>
-<!--End Coaching Area-->
-
-
 
 
 <!--Start Choose Area-->

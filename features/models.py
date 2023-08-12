@@ -69,6 +69,21 @@ class HomeContent(models.Model):
     class Meta:
         verbose_name_plural = "03.Home Page Content" 
 
+
+class Contact(models.Model):
+    name = models.TextField()
+    email = models.TextField()
+    contact = models.TextField()
+    subject = models.TextField(null=True, blank=True)
+    message = models.TextField()
+    created = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name_plural = "04. Contact"
+
+
 class Blog(models.Model):
     title = models.CharField(max_length=200)
     blog = models.TextField()
@@ -78,9 +93,33 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     class Meta:
-        verbose_name_plural = "06. Blogs" 
+        verbose_name_plural = "05. Blogs" 
+
+class Service(models.Model):
+    service_title = models.CharField(max_length=200)
+    service_description = models.TextField()
+    service_image = models.ImageField(upload_to="Services_images/",verbose_name="Service Image (370*250)")
+    slug = AutoSlugField(populate_from='service_title', unique=True)
+    created = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return self.service_title
+    class Meta:
+        verbose_name_plural = "06. Services" 
 
 
+
+class ServiceInquiry(models.Model):
+    name = models.CharField(max_length = 255)
+    email = models.CharField(max_length = 255)
+    contact = models.CharField(max_length = 255)
+    message = models.CharField(max_length = 255)
+    service = models.CharField(max_length = 255)
+    created = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name_plural = "07. Service Inquiry"
 
 
 
@@ -136,19 +175,6 @@ class Faqs(models.Model):
         verbose_name_plural = "05. FAQs"
 
 
-
-class Contact(models.Model):
-    name = models.TextField()
-    email = models.TextField()
-    contact = models.TextField()
-    subject = models.TextField(null=True, blank=True)
-    message = models.TextField()
-    created = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        return self.name
-    class Meta:
-        verbose_name_plural = "07. Contact"
 
 
 

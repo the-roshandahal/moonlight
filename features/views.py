@@ -5,6 +5,7 @@ from .models import *
 
 def home(request):
     blogs = Blog.objects.all()[:3]
+    services = Service.objects.all()[:3]
     slides = Slider.objects.all()
     home = HomeContent.objects.filter()[:1].get()
 
@@ -12,6 +13,7 @@ def home(request):
         'slides':slides,
         'home':home,
         'blogs':blogs,
+        'services':services,
     }
     return render(request,'index.html',context)
 
@@ -47,3 +49,29 @@ def blog_details(request,slug):
         'blog': blog
     }
     return render(request, 'blog_details.html', context)
+
+
+
+def services(request):
+    services = Service.objects.all()
+    context = {
+        'services': services
+    }
+    return render(request, 'services.html', context)
+
+def service_details(request,slug):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        contact = request.POST['phone']
+        message = request.POST['message']
+        service = Service.objects.get(slug=slug)
+        ServiceInquiry.objects.create(name=name, email=email,contact=contact, message = message, service = service.service_title)
+    
+    service = Service.objects.get(slug=slug)
+    services = Service.objects.all()
+    context = {
+        'service': service,
+        'services': services
+    }
+    return render(request, 'service_details.html', context)
