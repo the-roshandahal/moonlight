@@ -7,7 +7,11 @@ def home(request):
     blogs = Blog.objects.all()[:3]
     services = Service.objects.all()[:3]
     slides = Slider.objects.all()
-    home = HomeContent.objects.filter()[:1].get()
+    try:
+        home = HomeContent.objects.all()[:1].get()
+    except HomeContent.DoesNotExist:
+        home = None
+
 
     context = {
         'slides':slides,
@@ -94,7 +98,11 @@ def about_us(request):
     services = Service.objects.all()
     blogs = Blog.objects.all()
     home = HomeContent.objects.all()[:1].get()
-    about = AboutPageContent.objects.all()[:1].get()
+    
+    try:
+        about = AboutPageContent.objects.all()[:1].get()
+    except HomeContent.DoesNotExist:
+        about = None
     context = {
         'blogs': blogs,
         'services': services,
