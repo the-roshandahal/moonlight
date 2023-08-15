@@ -7522,9 +7522,9 @@ select:focus {
     line-height: 75px;
     transition: all 700ms ease 100ms;
 }
-.single-coaching-item-style2:hover .icon span:before{
+/* .single-coaching-item-style2:hover .icon span:before{
     color: #ffffff;
-}
+} */
 .single-coaching-item-style2 h3{
     color: #3fa6fe;
     font-size: 24px;
@@ -7537,16 +7537,16 @@ select:focus {
     transition: all 700ms ease 100ms;
 }
 
-.single-coaching-item-style2:hover h3 a{
+/* .single-coaching-item-style2:hover h3 a{
     color: #ffffff;
-}
+} */
 .single-coaching-item-style2 p{
     margin: 15px 0 0;
     transition: all 700ms ease 100ms;
 }
-.single-coaching-item-style2:hover p{
+/* .single-coaching-item-style2:hover p{
     color: #ffffff;
-}
+} */
 .single-coaching-item-style2 .coaching-item-style2-bg{
     position: absolute;
     top: 0;
@@ -7582,9 +7582,9 @@ select:focus {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fa5fe', endColorstr='#031f4c', GradientType=0 );
     z-index: -1;
 }
-.single-coaching-item-style2:hover .coaching-item-style2-bg{
+/* .single-coaching-item-style2:hover .coaching-item-style2-bg{
     transform: scaleX(1.0);     
-}
+} */
 
 
 

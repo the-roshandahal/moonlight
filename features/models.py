@@ -123,6 +123,26 @@ class ServiceInquiry(models.Model):
 
 
 
+class AboutPageContent(models.Model):
+    data_set = models.CharField(max_length=200)
+
+    title = models.CharField(max_length=150)
+    title_description = models.TextField()
+    title_image = models.ImageField(upload_to="about_images/", null=True, blank=True)
+
+
+    sub_title = models.CharField(max_length=150)
+    sub_text = models.TextField()
+
+    mission = models.TextField()
+    vision = models.TextField()
+    goal = models.TextField()
+    def __str__(self):
+        return self.data_set
+    class Meta:
+        verbose_name_plural = "11.About Page Content" 
+
+
 
 
 
@@ -190,20 +210,5 @@ class Team(models.Model):
         
     class Meta:
         verbose_name_plural = "10. team"
-
-
-class AboutContent(models.Model):
-    data_set = models.CharField(max_length=200)
-    mini_title_text = models.CharField(max_length=150)
-    title_text = models.CharField(max_length=150)
-    sub_text = models.TextField()
-    title_image = models.ImageField(upload_to="home_images/", null=True, blank=True)
-    mission = models.TextField()
-    vision = models.TextField()
-    goal = models.TextField()
-    def __str__(self):
-        return self.data_set
-    class Meta:
-        verbose_name_plural = "11.About Page Content" 
 
 

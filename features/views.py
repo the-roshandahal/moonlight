@@ -29,7 +29,12 @@ def contact(request):
         contact_obj.save()
         return redirect('contact')
     else:
-        return render(request,'contact.html')
+        services = Service.objects.all()
+
+        context = {
+            'services': services
+        }
+        return render(request,'contact.html',context)
     
 
 
@@ -38,15 +43,23 @@ def blogs(request):
     paginator = Paginator(blogs, 5)
     page_number = request.GET.get('page')
     blogs_page = paginator.get_page(page_number)
+    services = Service.objects.all()
+
     context = {
-        'blogs_page': blogs_page
+        'blogs_page': blogs_page,
+        'services': services
+
     }
     return render(request, 'blogs.html', context)
 
 def blog_details(request,slug):
     blog = Blog.objects.get(slug=slug)
+    services = Service.objects.all()
+
     context = {
-        'blog': blog
+        'blog': blog,
+        'services': services
+
     }
     return render(request, 'blog_details.html', context)
 
@@ -75,3 +88,17 @@ def service_details(request,slug):
         'services': services
     }
     return render(request, 'service_details.html', context)
+
+
+def about_us(request):
+    services = Service.objects.all()
+    blogs = Blog.objects.all()
+    home = HomeContent.objects.all()[:1].get()
+    about = AboutPageContent.objects.all()[:1].get()
+    context = {
+        'blogs': blogs,
+        'services': services,
+        'home': home,
+        'about': about,
+    }
+    return render(request, 'about_us.html', context)

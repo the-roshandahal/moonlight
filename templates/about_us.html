@@ -1,0 +1,201 @@
+{% load static %}{% include "header.html" %}
+
+<!--Start About Style1 Area-->
+<section class="about-style1-area pdtop100">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="about-style1-text-box pdtop0-r">
+                    <div class="sec-title">
+                        <h3>ABOUT MOONLIGHT</h3>
+                        <h2><span>{{about.title}}</span></h2>
+                    </div>
+                    <div class="inner-contant">
+                        <div class="text">
+                            <p>{{about.title_description}}</p>
+                        </div>
+                        <div class="bottom-box mt-4">
+                            <div class="left">
+                                <div class="button">
+                                    <a class="btn-one" href="{% url 'contact' %}"><span class="txt">More Detail<i class="fa fa-angle-double-right" aria-hidden="true"></i></span></a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="icon">
+                                    <span class="flaticon-24-hours thm-clr"></span>
+                                </div>
+                                <div class="phone">
+                                    <a href="tel:{{data.contact}}">{{data.contact}}</a>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>    
+                </div>  
+            </div>
+            
+            <div class="col-xl-6">
+                <div class="about-style1-image-box clearfix">
+                    <div class="image-box clearfix">
+                        <div class="main-image"><img src="{{about.title_image.url}}" alt=""></div>
+                       
+                    </div>
+                </div>     
+            </div>
+            
+        </div> 
+    </div>    
+</section>
+
+
+<section class="coaching-style2-area">
+    <div class="container">
+        <div class="sec-title text-center">
+            <h3>WHO WE ARE</h3>
+            <h2><span>{{about.sub_title}}</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-6">
+                <div class="single-coaching-item-style2 text-center">
+                    <div class="coaching-item-style2-bg"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <img src="{% static 'icon/graph.png' %}">
+                        </div>
+                        <h3><a href="coaching-ielts.html">Our Mission</a></h3>
+                        <p>{{about.mission}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="single-coaching-item-style2 text-center">
+                    <div class="coaching-item-style2-bg"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <img src="{% static 'icon/mission.png' %}">
+                        </div>
+                        <h3><a href="coaching-ielts.html">Our Vision</a></h3>
+                        <p>{{about.vision}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="single-coaching-item-style2 text-center">
+                    <div class="coaching-item-style2-bg"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <img src="{% static 'icon/goal.png' %}">
+                        </div>
+                        <h3><a href="coaching-ielts.html">Our Goals</a></h3>
+                        <p>{{about.goal}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="fact-counter-area" style="background-image:url(assets/images/parallax-background/fact-counter-bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <!--Start Single Fact Counter-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-fact-counter wow fadeInRight animated" data-wow-delay="100ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                    <div class="icon-box">
+                        <span class="flaticon-architecture-and-city"></span>
+                    </div>
+                    <div class="count-box counted">
+                        <h2>
+                            <span class="timer" data-from="1" data-to="{{home.years_of_experience}}" data-speed="5000" data-refresh-interval="50">{{home.years_of_experience}}</span>
+                            <span class="flaticon-plus"></span>
+                        </h2>
+                        <h5>Years of Experience</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Fact Counter-->
+            <!--Start Single Fact Counter-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-fact-counter wow fadeInRight animated" data-wow-delay="100ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                    <div class="icon-box">
+                        <span class="flaticon-education-2"></span>
+                    </div>
+                    <div class="count-box counted">
+                        <h2>
+                            <span class="timer" data-from="1" data-to="{{home.countries}}" data-speed="5000" data-refresh-interval="50">{{home.countries}}</span>
+                            <span class="flaticon-plus"></span>
+                        </h2>
+                        <h5>Countries Served</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Fact Counter-->
+            <!--Start Single Fact Counter-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-fact-counter wow fadeInRight animated" data-wow-delay="100ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                    <div class="icon-box">
+                        <span class="flaticon-architecture-and-city"></span>
+                    </div>
+                    <div class="count-box counted">
+                        <h2>
+                            <span class="timer" data-from="1" data-to="{{home.employees}}" data-speed="5000" data-refresh-interval="50">{{home.employees}}</span>
+                            <span class="flaticon-plus"></span>
+                        </h2>
+                        <h5>Employees Deployed</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Fact Counter-->
+            <!--Start Single Fact Counter-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-fact-counter wow fadeInRight animated" data-wow-delay="100ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                    <div class="icon-box">
+                        <span class="flaticon-people-2"></span>
+                    </div>
+                    <div class="count-box counted">
+                        <h2>
+                            <span class="timer" data-from="1" data-to="{{home.clients}}" data-speed="5000" data-refresh-interval="50">{{home.clients}}</span>
+                            <span class="flaticon-plus"></span>
+                        </h2>
+                        <h5>Clients</h5>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Fact Counter-->
+        </div>
+    </div>
+</section>
+
+<!--Start Blog Style1 Area-->
+<section class="blog-style1-area">
+    <div class="container">
+        <div class="sec-title text-center">
+            <h3>OUR NEWS</h3>
+            <h2>Articles From Resources<br> <span>And Latest News.</span></h2>
+        </div>
+        <div class="row">
+            <!--Start Single blog Style1-->
+            {% for blog in blogs %}
+            <div class="col-xl-4 col-lg-4">
+                <div class="single-blog-style1 wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                    <div class="img-holder">
+                        <div class="inner">
+                            <img src="{{blog.image.url}}" alt="Awesome Image">
+                        </div>
+                    </div> 
+                    <div class="text-holder">
+                        <ul class="meta-info">
+                            <li><span class="flaticon-user thm-clr"></span><a href="#">By admin</a></li>
+                            <li><span class="flaticon-open-archive thm-clr"></span><a href="#">{{blog.created}}</a></li>
+                        </ul>
+                        <h3><a href="{% url 'home' %}">{{blog.title}}</a></h3>
+                    </div>   
+                </div>
+            </div>
+            {% endfor %}
+            <!--End Single blog Style1-->
+        </div>
+    </div>
+</section>
+<!--End Blog Style1 Area-->
+{% include "footer.html" %}
