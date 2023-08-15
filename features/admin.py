@@ -8,12 +8,10 @@ admin.site.unregister(Attachment)
 admin.site.unregister(Group)
 admin.site.unregister(User)
 
-admin.site.register(CompanySetup)
-admin.site.register(Slider)
-admin.site.register(HomeContent)
-admin.site.register(ServiceInquiry)
-admin.site.register(AboutPageContent)
 
+admin.site.register(ServiceInquiry)
+admin.site.register(Contact)
+admin.site.register(Slider)
 
 
 class BlogAdmin(SummernoteModelAdmin):
@@ -27,3 +25,31 @@ class ServiceAdmin(SummernoteModelAdmin):
     summernote_fields = ('service_description',)
 
 admin.site.register(Service,ServiceAdmin)
+
+
+
+
+class ReadOnlyModelAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        # Disable the "Add" button
+        return False
+    
+    def has_change_permission(self, request, obj=None):
+        # Allow editing
+        return True
+    
+    def has_delete_permission(self, request, obj=None):
+        # Disable the "Delete" button
+        return False
+
+@admin.register(CompanySetup)
+class CompanySetupAdmin(ReadOnlyModelAdmin):
+    pass
+
+@admin.register(HomeContent)
+class HomeContentAdmin(ReadOnlyModelAdmin):
+    pass
+
+@admin.register(AboutPageContent)
+class AboutPageContentAdmin(ReadOnlyModelAdmin):
+    pass

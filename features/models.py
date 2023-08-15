@@ -29,16 +29,6 @@ class CompanySetup(models.Model):
         verbose_name_plural = "01. Company Setup" 
 
 
-class Slider(models.Model):
-    image = models.ImageField(upload_to="slider_images",verbose_name="Image (1920*800)")
-    heading_text = models.CharField(max_length=200) 
-    sub_heading_text = models.CharField(max_length=200) 
-    button_text = models.CharField(max_length=50)
-    button_url = models.URLField()
-    def __str__(self):
-        return self.heading_text
-    class Meta:
-        verbose_name_plural = "02. Slider" 
 
 
 
@@ -67,59 +57,7 @@ class HomeContent(models.Model):
     def __str__(self):
         return self.data_set
     class Meta:
-        verbose_name_plural = "03.Home Page Content" 
-
-
-class Contact(models.Model):
-    name = models.TextField()
-    email = models.TextField()
-    contact = models.TextField()
-    subject = models.TextField(null=True, blank=True)
-    message = models.TextField()
-    created = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        return self.name
-    class Meta:
-        verbose_name_plural = "04. Contact"
-
-
-class Blog(models.Model):
-    title = models.CharField(max_length=200)
-    blog = models.TextField()
-    image = models.ImageField(upload_to="blogs_images/",verbose_name="Blog Image (370*270)")
-    slug = AutoSlugField(populate_from='title', unique=True)
-    created = models.DateField(auto_now_add=True)
-    def __str__(self):
-        return self.title
-    class Meta:
-        verbose_name_plural = "05. Blogs" 
-
-class Service(models.Model):
-    service_title = models.CharField(max_length=200)
-    service_description = models.TextField()
-    service_image = models.ImageField(upload_to="Services_images/",verbose_name="Service Image (370*250)")
-    slug = AutoSlugField(populate_from='service_title', unique=True)
-    created = models.DateField(auto_now_add=True)
-    def __str__(self):
-        return self.service_title
-    class Meta:
-        verbose_name_plural = "06. Services" 
-
-
-
-class ServiceInquiry(models.Model):
-    name = models.CharField(max_length = 255)
-    email = models.CharField(max_length = 255)
-    contact = models.CharField(max_length = 255)
-    message = models.CharField(max_length = 255)
-    service = models.CharField(max_length = 255)
-    created = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        return self.name
-    class Meta:
-        verbose_name_plural = "07. Service Inquiry"
+        verbose_name_plural = "02.Home Page Content" 
 
 
 
@@ -140,75 +78,70 @@ class AboutPageContent(models.Model):
     def __str__(self):
         return self.data_set
     class Meta:
-        verbose_name_plural = "11.About Page Content" 
+        verbose_name_plural = "03.About Page Content" 
 
 
 
+class Slider(models.Model):
+    image = models.ImageField(upload_to="slider_images",verbose_name="Image (1920*800)")
+    heading_text = models.CharField(max_length=200) 
+    sub_heading_text = models.CharField(max_length=200) 
+    button_text = models.CharField(max_length=50)
+    button_url = models.URLField()
+    def __str__(self):
+        return self.heading_text
+    class Meta:
+        verbose_name_plural = "04. Slider" 
 
 
-
-
-
-
-
-
-
-
-
-
-
-class TeamMember(models.Model):
-    name = models.CharField(max_length=200)
-    position = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='team_images/team')
+class Contact(models.Model):
+    name = models.TextField()
+    email = models.TextField()
+    contact = models.TextField()
+    subject = models.TextField(null=True, blank=True)
+    message = models.TextField()
     created = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.name
     class Meta:
-        verbose_name_plural = "03. Team Members"
+        verbose_name_plural = "05. Contact"
 
 
-class Testimonial(models.Model):
-    name= models.CharField(max_length=200)
-    position= models.CharField(max_length=200)
-    testimonial= models.TextField()
-    image = models.ImageField(upload_to="testimonial_images/", blank=True, null=True)
+class Blog(models.Model):
+    title = models.CharField(max_length=200)
+    blog = models.TextField()
+    image = models.ImageField(upload_to="blogs_images/",verbose_name="Blog Image (370*270)")
+    slug = AutoSlugField(populate_from='title', unique=True)
+    created = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "06. Blogs" 
+
+class Service(models.Model):
+    service_title = models.CharField(max_length=200)
+    service_description = models.TextField()
+    service_image = models.ImageField(upload_to="Services_images/",verbose_name="Service Image (370*250)")
+    slug = AutoSlugField(populate_from='service_title', unique=True)
+    created = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return self.service_title
+    class Meta:
+        verbose_name_plural = "07. Services" 
 
 
+
+class ServiceInquiry(models.Model):
+    name = models.CharField(max_length = 255)
+    email = models.CharField(max_length = 255)
+    contact = models.CharField(max_length = 255)
+    message = models.CharField(max_length = 255)
+    service = models.CharField(max_length = 255)
     created = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.name
     class Meta:
-        verbose_name_plural = "04. Testimonials"
-
-class Faqs(models.Model):
-    question = models.TextField()
-    answer = models.TextField()
-    
-    created = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        return self.question
-    class Meta:
-        verbose_name_plural = "05. FAQs"
-
-
-
-
-
-class Team(models.Model):
-    name = models.CharField(max_length=200)
-    position = models.CharField(max_length=150)
-    team = models.TextField()
-    order = models.IntegerField()
-    image = models.ImageField(upload_to="team_images/", null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-        
-    class Meta:
-        verbose_name_plural = "10. team"
-
+        verbose_name_plural = "08. Service Inquiry"
 
