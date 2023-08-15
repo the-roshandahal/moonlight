@@ -66,7 +66,7 @@ class AboutPageContent(models.Model):
 
     title = models.CharField(max_length=150)
     title_description = models.TextField()
-    title_image = models.ImageField(upload_to="about_images/", null=True, blank=True)
+    title_image = models.ImageField(upload_to="about_images/", null=True, blank=True,verbose_name="Image (470*450)")
 
 
     sub_title = models.CharField(max_length=150)
