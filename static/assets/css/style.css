@@ -2656,7 +2656,7 @@ select:focus {
 .select-country-area{
     position: relative;
     display: block;
-    padding: 100px 0 100px;
+    padding: 270px 0 100px;
     background-attachment: scroll;
     background-position: center center;
     background-repeat: no-repeat;
