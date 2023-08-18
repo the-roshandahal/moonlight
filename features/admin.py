@@ -12,12 +12,22 @@ admin.site.unregister(User)
 admin.site.register(ServiceInquiry)
 admin.site.register(Contact)
 admin.site.register(Slider)
+admin.site.register(VacancyCategory)
+
+class VacancyInquiryAdmin(SummernoteModelAdmin):
+    list_display = ('vacancy', 'created') 
+admin.site.register(VacancyInquiry,VacancyInquiryAdmin)
 
 
 class BlogAdmin(SummernoteModelAdmin):
     list_display = ('title', 'created')
     summernote_fields = ('blog',) 
 admin.site.register(Blog,BlogAdmin)
+
+class VacancyAdmin(SummernoteModelAdmin):
+    list_display = ('job_title','category','is_active', 'created')
+    summernote_fields = ('job_description',) 
+admin.site.register(Vacancy,VacancyAdmin)
 
 
 class ServiceAdmin(SummernoteModelAdmin):

@@ -145,3 +145,54 @@ class ServiceInquiry(models.Model):
     class Meta:
         verbose_name_plural = "08. Service Inquiry"
 
+
+class VacancyCategory(models.Model):
+    category_title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.category_title
+    class Meta:
+        verbose_name_plural = "09. Vacancy Category"
+
+GENDER_CHOICES = (
+    ('male','male'),
+    ('female','female'),
+    ('both','both'),
+)
+
+class Vacancy(models.Model):
+    category = models.ForeignKey(VacancyCategory, on_delete=models.SET_NULL,null=True,blank=True)
+    job_title = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    salary = models.CharField(max_length=255)
+    qualification = models.CharField(max_length=255)
+    experience = models.CharField(max_length=255)
+    gender = models.CharField(max_length=255,choices = GENDER_CHOICES)
+    openings = models.IntegerField()
+    job_description = models.TextField()
+    job_image = models.ImageField(upload_to="job_images/",verbose_name="Featured Image (270*170)")
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    slug = AutoSlugField(populate_from='job_title', unique=True)
+
+    def __str__(self):
+        return self.job_title
+    class Meta:
+        verbose_name_plural = "10. Vacancy "
+
+
+
+
+class VacancyInquiry(models.Model):
+    name = models.CharField(max_length = 255)
+    phone = models.CharField(max_length = 255)
+    email = models.CharField(max_length = 255)
+    message = models.CharField(max_length = 255)
+
+    vacancy = models.CharField(max_length = 255)
+    created = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name_plural = "11. Demand Inquiry"
