@@ -32,7 +32,7 @@ admin.site.register(Service,ServiceAdmin)
 class ReadOnlyModelAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
         # Disable the "Add" button
-        return False
+        return True
     
     def has_change_permission(self, request, obj=None):
         # Allow editing
