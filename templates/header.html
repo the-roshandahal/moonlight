@@ -1,4 +1,4 @@
-{% include "nav-links.html" %}
+{% include "nav-links.html" %}{% load static %}
 <body>
     <div class="boxed_wrapper">
     
@@ -6,85 +6,49 @@
     
     <!-- Main header -->
     <header class="main-header header-style-one">
-        <div class="border-top" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000"></div>
+        <div class="border-top" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" ></div>
         <!--Start header-->
-        <div class="header">
+        <div class="header" style="padding: 10px;">
             <div class="container">
-                <div class="outer-box clearfix">
-
-                    <!--Start Header Left-->
-                    <div class="header-left clearfix pull-left">
-                        <div class="logo">
-                            <a href="{% url 'home' %}"><img src="{{data.color_logo.url}}" alt="Awesome Logo" title=""></a>
-                        </div>
-                    </div>
-                    <!--End Header Left-->
-                    <!--Start Header Right-->
-                    <div class="header-right pull-right clearfix">
-                        <div class="top">
-                            <div class="header-contact-info">
-                                <ul>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="flaticon-worldwide thm-clr"></span>    
-                                        </div>
-                                        <div class="title">
-                                            <h3>Location</h3>
-                                            <p>{{data.location}}</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="flaticon-countdown thm-clr"></span>    
-                                        </div>
-                                        <div class="title">
-                                            <h3>Office Timeing</h3>
-                                            <p>{{data.opening_hours}}</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="flaticon-email thm-clr"></span>    
-                                        </div>
-                                        <div class="title">
-                                            <h3><a href="tel:123456789">Contact</a></h3>
-                                            <p><a href="mailto:info@templatepath.com">{{data.contact}}</a></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>      
-                        </div>
-                        <div class="bottom clearfix">
-                            <div class="left pull-left">
-                                <ul class="header-menu">
-                                    <li><a href="#">Help Desk<i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>    
-                                    <li><a href="#">Get A Free Quote<i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>    
-                                    <li><a href="#">Our Onlilne Shop<i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>    
-                                    <li><a href="#">Apply Now<i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>    
-                                </ul>
-                            </div>
-                            <div class="right pull-right">
-                                <div class="header-social-link">
-                                    <ul>
-                                        <li>
-                                            <a href="{{data.facebook_url}}" target = "_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
-                                        </li>
-                                        <li>
-                                            <a href="{{data.instagram_url}}" target = "_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a> 
-                                        </li>
-                                        <li>
-                                            <a href="{{data.youtube_url}}" target = "_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="{{data.linkedin_url}}" target = "_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a> 
-                                        </li>
-                                    </ul>
+                <div class="row">
+                    <div class="col-6 col-sm-2">
+                        <a href="{% url 'home' %}"><img src="{{data.color_logo.url}}" alt="Awesome Logo" title="" style="height: 70px; width: 190px;"></a>
+                    </div> 
+                    <div class="col-12 col-sm-9 d-none d-sm-block">
+                        <div class="row" style="padding-left: 80px;" >
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3> <span class="flaticon-worldwide thm-clr" style="margin-right: 5px;"></span> Location</h3>
+                                        <p>{{data.location}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>          
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3><span class="flaticon-countdown thm-clr"  style="margin-right: 5px;"></span> Office Timing</h3>
+                                        <p>{{data.opening_hours}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3><span class="flaticon-email thm-clr"  style="margin-right: 5px;"></span>Contact</h3>
+                                        <p>{{data.contact}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!--End Header Right-->
-                </div>  
+                    <div class="col-6 col-sm-1">
+                        <div class="d-flex justify-content-end">
+                            <img src="{% static 'flag.gif' %}" alt="Awesome Logo" title="" style="height: 50px;">
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
         <!--End header -->
@@ -110,15 +74,15 @@
                                     <ul class="navigation clearfix">
                                         <li><a href="{% url 'home' %}">Home</a></li>
                                         <li><a href="{% url 'about_us' %}">About Us</a></li>
-                                        <li class="dropdown"><a href="{% url 'services' %}">Our Services</a>
-                                            <ul>
+                                        <li><a href="{% url 'services' %}">Our Services</a>
+                                            <!-- <ul>
                                                 {% for service in services %}
                                                 <li><a href="{% url 'service_details' slug=service.slug %}">{{service.service_title}}</a></li>
                                                 {% endfor %}
-                                            </ul>
+                                            </ul> -->
                                         </li>
                                         <li><a href="{% url 'home' %}">Demands</a></li>
-                                        <li><a href="{% url 'blogs' %}">Blogs</a></li>
+                                        <!-- <li><a href="{% url 'blogs' %}">Blogs</a></li> -->
                                         <li><a href="{% url 'contact' %}">Contact Us</a></li>
                                     </ul>
                                 </div>
