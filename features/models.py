@@ -122,7 +122,7 @@ class Blog(models.Model):
 
 class Service(models.Model):
     service_title = models.CharField(max_length=200)
-    service_description = models.TextField()
+    service_description = models.TextField(null=True,blank=True)
     service_image = models.ImageField(upload_to="Services_images/",verbose_name="Service Image (370*250)")
     order = models.IntegerField(default=0)
     slug = AutoSlugField(populate_from='service_title', unique=True)
