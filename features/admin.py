@@ -50,6 +50,6 @@ class CompanySetupAdmin(ReadOnlyModelAdmin):
     pass
 
 @admin.register(HomeContent)
-class HomeContentAdmin(ReadOnlyModelAdmin):
-    pass
+class HomeContentAdmin(SummernoteModelAdmin,ReadOnlyModelAdmin):
+    summernote_fields = ('bottom_text','header_text','service_text')
 
