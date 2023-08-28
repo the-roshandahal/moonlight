@@ -21,7 +21,7 @@ admin.site.register(Blog,BlogAdmin)
 
 
 class ServiceAdmin(SummernoteModelAdmin):
-    list_display = ('service_title', 'created')
+    list_display = ('service_title','order', 'created')
     summernote_fields = ('service_description',)
 
 admin.site.register(Service,ServiceAdmin)

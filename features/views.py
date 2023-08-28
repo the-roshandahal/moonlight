@@ -5,7 +5,7 @@ from .models import *
 
 def home(request):
     blogs = Blog.objects.all()[:3]
-    services = Service.objects.all()[:3]
+    services = Service.objects.all().order_by('order')
     slides = Slider.objects.all()
     try:
         home = HomeContent.objects.all()[:1].get()
@@ -33,10 +33,8 @@ def contact(request):
         contact_obj.save()
         return redirect('contact')
     else:
-        services = Service.objects.all()
 
         context = {
-            'services': services
         }
         return render(request,'contact.html',context)
     
@@ -47,22 +45,18 @@ def blogs(request):
     paginator = Paginator(blogs, 5)
     page_number = request.GET.get('page')
     blogs_page = paginator.get_page(page_number)
-    services = Service.objects.all()
 
     context = {
         'blogs_page': blogs_page,
-        'services': services
 
     }
     return render(request, 'blogs.html', context)
 
 def blog_details(request,slug):
     blog = Blog.objects.get(slug=slug)
-    services = Service.objects.all()
 
     context = {
         'blog': blog,
-        'services': services
 
     }
     return render(request, 'blog_details.html', context)
@@ -70,7 +64,7 @@ def blog_details(request,slug):
 
 
 def services(request):
-    services = Service.objects.all()
+    services = Service.objects.all().order_by('-order')
     context = {
         'services': services
     }
@@ -86,7 +80,7 @@ def service_details(request,slug):
         ServiceInquiry.objects.create(name=name, email=email,contact=contact, message = message, service = service.service_title)
     
     service = Service.objects.get(slug=slug)
-    services = Service.objects.all()
+    services = Service.objects.all().order_by('-order')
     context = {
         'service': service,
         'services': services
@@ -95,7 +89,6 @@ def service_details(request,slug):
 
 
 def about_us(request):
-    services = Service.objects.all()
     blogs = Blog.objects.all()
     home = HomeContent.objects.all()[:1].get()
     
@@ -105,7 +98,6 @@ def about_us(request):
         about = None
     context = {
         'blogs': blogs,
-        'services': services,
         'home': home,
         'about': about,
     }
