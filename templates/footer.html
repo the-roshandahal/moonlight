@@ -78,15 +78,21 @@
                                     <div class="text">
                                         <h4>Send Your Mail At</h4>
                                         <p><a href="mailto:{{data.email}}">{{data.email}}</a></p>
+                                        {% if data.secondary_email %}
+                                        <p><a href="mailto:{{data.secondary_email}}">{{data.secondary_email}}</a></p>
+                                        {% endif %}
                                     </div>
                                 </li>
                                 <li>
                                     <div class="icon">
-                                        <span class="flaticon-countdown thm-clr"></span>
+                                        <span class="flaticon-email thm-clr">
                                     </div>
                                     <div class="text">
-                                        <h4>Working Hours</h4>
-                                        <p>{{data.opening_hours}}</p>
+                                        <h4>Phone</h4>
+                                        <p>{{data.contact}}</p>
+                                        {% if data.secondary_contact %}
+                                        <p>{{data.secondary_contact}}</p>
+                                        {% endif %}
                                     </div>
                                 </li> 
                             </ul>

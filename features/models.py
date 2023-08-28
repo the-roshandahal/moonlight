@@ -10,9 +10,14 @@ class CompanySetup(models.Model):
     company_name = models.CharField(max_length=255)
 
     location = models.CharField(max_length=200)
+
     contact = models.CharField(max_length=200)
-    opening_hours = models.CharField(max_length=200)
+    secondary_contact = models.CharField(max_length=200, null=True, blank=True)
+
     email = models.CharField(max_length=200)
+    secondary_email = models.CharField(max_length=200, null=True, blank=True)
+
+    opening_hours = models.CharField(max_length=200)
     
     facebook_url = models.URLField(null=True,blank=True)
     instagram_url = models.URLField(null=True,blank=True)

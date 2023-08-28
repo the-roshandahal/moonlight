@@ -36,7 +36,11 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3><span class="flaticon-email thm-clr"  style="margin-right: 5px;"></span>Contact</h3>
-                                        <p>{{data.contact}}</p>
+                                        <p>{{data.contact}}
+                                            {% if data.secondary_contact %}
+                                              <span>, {{data.secondary_contact}}</span>
+                                            {% endif %}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
