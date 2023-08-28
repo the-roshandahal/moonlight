@@ -42,7 +42,6 @@ class HomeContent(models.Model):
     header_button_url = models.URLField()
 
     service_title = models.CharField(max_length=255)
-    service_text = models.TextField()
 
     bottom_title = models.CharField(max_length=150)
     bottom_sub_title = models.CharField(max_length=150)

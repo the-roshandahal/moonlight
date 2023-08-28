@@ -75,16 +75,13 @@
                         <h3>Sectors We Recruit In</h3>
                         <h2>{{home.service_title}}</h2>
                     </div>
-                    <div class="text">
-                        <p>{{home.service_text}}</p>
-                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <!--Start Single select Country style3-->
             {% for service in services %}
-            <div class="col-xl-4 col-lg-4">
+            <div class="col-xl-3 col-lg-3">
                 <div class="single-select-country-style3">
                     <div class="img-holder">
                         <div class="inner">
@@ -92,9 +89,7 @@
                         </div>
                     </div>
                     <div class="text-holder">
-                        <div class="icon"><span class="flaticon-technology"></span></div>
                         <h3>{{service.service_title}}</h3>
-                        <!-- <p>{{service.service_description|safe | truncatechars:30}}</p> -->
                     </div>    
                 </div>    
             </div>

@@ -51,5 +51,5 @@ class CompanySetupAdmin(ReadOnlyModelAdmin):
 
 @admin.register(HomeContent)
 class HomeContentAdmin(SummernoteModelAdmin,ReadOnlyModelAdmin):
-    summernote_fields = ('bottom_text','header_text','service_text')
+    summernote_fields = ('bottom_text','header_text')
 
