@@ -13,6 +13,8 @@ admin.site.register(ServiceInquiry)
 admin.site.register(Contact)
 admin.site.register(Slider)
 
+admin.site.register(JobVacancyCategory)
+admin.site.register(JobVacancyInquiry)
 
 class BlogAdmin(SummernoteModelAdmin):
     list_display = ('title', 'created')
@@ -26,7 +28,10 @@ class ServiceAdmin(SummernoteModelAdmin):
 
 admin.site.register(Service,ServiceAdmin)
 
-
+class VacancyAdmin(SummernoteModelAdmin):
+    list_display = ('job_title','category','is_active', 'created')
+    summernote_fields = ('job_description',) 
+admin.site.register(JobVacancy,VacancyAdmin)
 
 
 class ReadOnlyModelAdmin(admin.ModelAdmin):

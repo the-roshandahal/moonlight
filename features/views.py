@@ -102,3 +102,57 @@ def about_us(request):
         'about': about,
     }
     return render(request, 'about_us.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def demands(request):
+    jobs= JobVacancy.objects.filter(is_active = True)
+    context = {
+        'jobs': jobs,
+    }
+    return render(request,'demands.html',context)
+
+def job_description(request,slug):
+    if request.method == "POST":
+        name = request.POST['name']
+        phone = request.POST['phone']
+        email = request.POST['email']
+        message = request.POST['message']
+        vacancy = JobVacancy.objects.get(slug=slug)
+        JobVacancyInquiry.objects.create(name=name, email=email,phone=phone, message = message, vacancy = vacancy)
+        return redirect('job_description', slug=slug)
+    
+    job = JobVacancy.objects.get(slug=slug)
+    all_jobs = JobVacancy.objects.filter(is_active = True).exclude(slug=slug)[:3]
+    context = {
+        'job': job,
+        'all_jobs': all_jobs
+    }
+    return render(request, 'job_description.html', context)
+
+
+
+
+
+
+def error_404(request, exception):
+    return render(request, 'error.html', status=404)
+
+
+def error_500(request):
+    return render(request, 'error.html', status=500)

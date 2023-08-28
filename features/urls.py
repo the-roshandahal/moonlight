@@ -16,6 +16,9 @@ urlpatterns = [
     
     path("about_us", views.about_us, name="about_us"),
 
+    path("demands", views.demands, name="demands"),
+    path("job_description/<str:slug>", views.job_description, name="job_description"),
+
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
     re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
 ]
