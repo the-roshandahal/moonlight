@@ -72,6 +72,8 @@ class AboutPageContent(models.Model):
     sub_title = models.CharField(max_length=150)
     sub_text = models.TextField()
 
+    why_us = models.TextField()
+    
     mission = models.TextField()
     vision = models.TextField()
     goal = models.TextField()

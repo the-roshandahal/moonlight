@@ -41,6 +41,9 @@ class ReadOnlyModelAdmin(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None):
         # Disable the "Delete" button
         return False
+@admin.register(AboutPageContent)
+class AboutPageContentAdmin(SummernoteModelAdmin, ReadOnlyModelAdmin):
+    summernote_fields = ('why_us', 'title_description')
 
 @admin.register(CompanySetup)
 class CompanySetupAdmin(ReadOnlyModelAdmin):
@@ -50,6 +53,3 @@ class CompanySetupAdmin(ReadOnlyModelAdmin):
 class HomeContentAdmin(ReadOnlyModelAdmin):
     pass
 
-@admin.register(AboutPageContent)
-class AboutPageContentAdmin(ReadOnlyModelAdmin):
-    pass

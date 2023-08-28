@@ -5,14 +5,14 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-6">
-                <div class="about-style1-text-box pdtop0-r">
+                <div class="about-style1-text-box">
                     <div class="sec-title">
                         <h3>ABOUT MOONLIGHT</h3>
                         <h2><span>{{about.title}}</span></h2>
                     </div>
                     <div class="inner-contant">
                         <div class="text">
-                            <p>{{about.title_description}}</p>
+                            <p>{{about.title_description|safe}}</p>
                         </div>
                         <div class="bottom-box mt-4">
                             <div class="left">
@@ -40,6 +40,21 @@
                        
                     </div>
                 </div>     
+            </div>
+
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="about-style1-text-box">
+                        <div class="sec-title">
+                            <h2><span>WHY MOONLIGHT?</span></h2>
+                        </div>
+                        <div class="inner-contant">
+                            <div class="text">
+                                <p>{{about.why_us|safe}}</p>
+                            </div>
+                        </div>    
+                    </div>  
+                </div>
             </div>
             
         </div> 
