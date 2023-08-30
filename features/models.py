@@ -135,7 +135,7 @@ class Service(models.Model):
     def __str__(self):
         return self.service_title
     class Meta:
-        verbose_name_plural = "07. Services" 
+        verbose_name_plural = "07. Sectors" 
 
 
 
@@ -209,3 +209,26 @@ class JobVacancyInquiry(models.Model):
     class Meta:
         verbose_name_plural = "11. Demand Inquiry"
 
+
+
+class ServicePageContent(models.Model):
+    data_set = models.CharField(max_length=255, default= 'Click to Edit')
+    service_title = models.TextField()
+    why_chose_us = models.TextField()
+    get_started = models.TextField()    
+    
+    def __str__(self):
+        return self.data_set
+    class Meta:
+        verbose_name_plural = "12. Service Page Content"
+
+class CompanyService(models.Model):
+    service_title = models.CharField(max_length=255, verbose_name="Service title.")
+    service_description = models.TextField()
+    order = models.IntegerField(default=0)
+
+
+    def __str__(self):
+        return self.service_title
+    class Meta:
+        verbose_name_plural = "13. Services"

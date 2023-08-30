@@ -65,8 +65,16 @@ def blog_details(request,slug):
 
 def services(request):
     services = Service.objects.all().order_by('-order')
+    company_services = CompanyService.objects.all().order_by('-order')
+    try:
+        service_page_data = ServicePageContent.objects.all()[:1].get()
+    except ServicePageContent.DoesNotExist:
+        service_page_data = None
+
     context = {
-        'services': services
+        'services': services,
+        'service_page_data':service_page_data,
+        'company_services':company_services,
     }
     return render(request, 'services.html', context)
 

@@ -1,6 +1,53 @@
 {% include "header.html" %}
-<section class="visa-area visa-page">
+<section class=" mt-5">
     <div class="container">
+        <div class="sec-title">
+            <h2><span>Our Services</span></h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="about-style1-text-box">
+                    <div class="inner-contant">
+                        <div class="text">
+                            <p>
+                                {{service_page_data.service_title|safe}}
+                            </p>
+                        </div>
+                    </div>    
+                </div>  
+            </div>
+
+        </div> 
+    </div>    
+</section>
+<section class="coaching-style2-area">
+    <div class="container">
+        <div class="row">
+
+            {% for service in company_services %}
+            <!--Start Single Coaching Item-->
+            <div class="col-xl-4 col-lg-6 wow fadeInUp animated" data-wow-delay="0ms" style="visibility: visible; animation-delay: 0ms; animation-name: fadeInUp;">
+                <div class="single-coaching-item-style2 text-center">
+                    <div class="coaching-item-style2-bg"></div>
+                    <div class="inner">
+                        <h3><a>{{service.service_title}}</a></h3>
+                        <p>{{service.service_description}}</p>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Coaching Item--> 
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+
+<section class="">
+    <div class="container">
+        <div class="sec-title">
+            <h2><span>Sectors We Recruit In</span></h2>
+        </div>
         <div class="row">
             <!--Start Single Visa Box-->
             {% for service in services %}
@@ -23,5 +70,55 @@
         </div>
     </div>
 </section>
+
+
+<section class="mb-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="about-style1-text-box">
+                    <div class="sec-title">
+                        <h2><span>Why Choose US</span></h2>
+                    </div>
+                    <div class="inner-contant">
+                        <div class="text">
+                            <p>
+                                {{service_page_data.why_chose_us|safe}}
+                            </p>
+                        </div>
+                    </div>    
+                </div>  
+            </div>
+
+        </div> 
+    </div>    
+</section>
+
+<section class="mb-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="about-style1-text-box">
+                    <div class="sec-title">
+                        <h2><span>Get Started</span></h2>
+                    </div>
+                    <div class="inner-contant">
+                        <div class="text">
+                            <p>
+                                {{service_page_data.get_started|safe}}
+                            </p>
+                        </div>
+                    </div>    
+                </div>  
+            </div>
+
+        </div> 
+    </div>    
+</section>
+
+
+
+
+
 
 {% include "footer.html" %}

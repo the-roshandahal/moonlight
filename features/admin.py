@@ -15,6 +15,7 @@ admin.site.register(Slider)
 
 admin.site.register(JobVacancyCategory)
 admin.site.register(JobVacancyInquiry)
+admin.site.register(CompanyService)
 
 class BlogAdmin(SummernoteModelAdmin):
     list_display = ('title', 'created')
@@ -58,3 +59,7 @@ class CompanySetupAdmin(ReadOnlyModelAdmin):
 class HomeContentAdmin(SummernoteModelAdmin,ReadOnlyModelAdmin):
     summernote_fields = ('bottom_text','header_text')
 
+
+@admin.register(ServicePageContent)
+class HomeContentAdmin(SummernoteModelAdmin,ReadOnlyModelAdmin):
+    summernote_fields = ('service_title','why_chose_us','get_started')
