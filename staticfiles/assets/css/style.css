@@ -302,7 +302,7 @@ li{
     position: relative;
     display: block;
     margin-top: -6px;
-    padding-bottom: 48px;
+    /* padding-bottom: 48px; */
 }
 .sec-title h3{
     color: #0098ff;
@@ -2782,7 +2782,7 @@ select:focus {
     position: relative;
     display: block;
     background: #f5f5f5;
-    padding: 100px 0 150px;
+    padding: 50px 0 50px;
 }
 .choose-area .layer-outer {
     position: absolute;
@@ -3267,7 +3267,7 @@ select:focus {
     position: relative;
     display: block;
     background: #ffffff;
-    padding: 100px 0 50px;
+    padding: 50px 0 50px;
 }
 
 .single-blog-style1{
@@ -5329,7 +5329,7 @@ select:focus {
     position: relative;
     display: block;
     background: #ffffff;
-    padding: 100px 0 185px;
+    padding: 55px 0 50px;
 }
 .select-country-style3-area.country-page{
     padding-bottom: 155px;
